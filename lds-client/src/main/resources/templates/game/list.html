@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en"
+      layout:decorate="~{layout}" xmlns:th="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta charset="UTF-8">
+        <title>Home</title>
+    </head>
+    <body>
+
+    <div layout:fragment="body">
+
+        <div class="container-fluid">
+            <h1 class="mt-4"> Games </h1>
+            <ol class="breadcrumb mb-4">
+                <li class="breadcrumb-item">Home</li>
+                <li class="breadcrumb-item">Lista de games</li>
+            </ol>
+
+            <div class="card mb-4">
+                <div class="card-header">
+                    <i class="fas fa-table mr-1">Games Cadastrados</i>
+                </div>
+
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-hover table-striped">
+                            <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Nome</th>
+                                <th>Preço</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tfoot>
+                            <tr>
+                                <th>Id</th>
+                                <th>Nome</th>
+                                <th>Preço</th>
+                                <th></th>
+                            </tr>
+                            </tfoot>
+                            <tbody>
+                            <tr th:each="game : ${jogos}">
+                                <td th:text="${game.id}">100</td>
+                                <td th:text="${game.name}">Tbursio</td>
+                                <td th:text="${game.price}">T@Gmail</td>
+                                <td>
+
+                                </td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en"
+      layout:decorate="~{layout}" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+
+<div layout:fragment="body">
+
+    <div class="container-fluid">
+        <h1 class="mt-4"> Usuários </h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item">Home</li>
+            <li class="breadcrumb-item">Editar Usuário</li>
+        </ol>
+        <div class="row">
+            <div class="mb-2 col-12 col-sm-5">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="mb-3 text-center">
+                            <img src="/Xtreme Admin Template by WrapPixel_files/1.jpg" alt="avatar"
+                                 class="rounded-circle img-fluid" width="200">
+                        </div>
+
+                        <div class="mb-2">
+                            <div class="mb-2">
+                                <input type="file" class="fora-control-file mb-1">
+                                <button class="btn btn-primary col-12" type="submit">Trocar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-2 col-12 col-sm-7">
+                <form th:action="@{/user/update}" method="post">
+
+                    <input type="hidden" th:field="${usuario.id}">
+
+                    <div class="mb-2 card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-3">Nome</div>
+                                <div class="col-sm-9">
+                                    <input type="text" class="form-control" placeholder="Nome completo"
+                                           th:field="${usuario.fullName}"
+                                    >
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-3">Email</div>
+                                <div class="col-sm-9">
+                                    <input type="email" class="form-control" placeholder="email" th:field="${usuario.email}">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <button class="btn btn-primary col-12">Atualizar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
