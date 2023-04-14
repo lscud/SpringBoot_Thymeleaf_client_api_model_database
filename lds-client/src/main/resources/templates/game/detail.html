@@ -10,10 +10,10 @@
 <div layout:fragment="body">
 
     <div class="container-fluid">
-        <h1 class="mt-4"> Usuários </h1>
+        <h1 class="mt-4"> Games </h1>
         <ol class="breadcrumb mb-4">
-            <li class="breadcrumb-item">Game</li>
-            <li class="breadcrumb-item">Editar Games</li>
+            <li class="breadcrumb-item">Home</li>
+            <li class="breadcrumb-item">Detalhes do Game</li>
         </ol>
         <div class="row">
             <div class="mb-2 col-12 col-sm-5">
@@ -35,36 +35,43 @@
             </div>
 
             <div class="mb-2 col-12 col-sm-7">
-                <form th:action="@{/game/update}" method="post">
-<!--                    Uma forma de carregar o id junto. Sem isso a pagina nao reconheçe o ID-->
-                    <input type="hidden" th:field="${jogo.id}">
-
+                <form action="">
                     <div class="mb-2 card">
                         <div class="card-body">
+
                             <div class="row">
-                                <div class="col-sm-3">Nome</div>
+                                <div class="col-sm-3">Id</div>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" placeholder="Nome"
-                                           th:field="${jogo.name}"
-                                    >
+                                    <label type="text" class="form-control" th:text="${jogo.id}" />
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-sm-3">Preço</div>
+                                <div class="col-sm-3">Name</div>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" placeholder="price" th:field="${jogo.price}">
+                                    <label type="text" class="form-control" th:text="${jogo.name}" />
                                 </div>
                             </div>
+                            <div class="row">
+                                <div class="col-sm-3">Price</div>
+                                <div class="col-sm-9">
+                                    <label type="text" class="form-control" th:text="${jogo.price}" />
+                                </div>
+                            </div>
+                            
+                            
+
                         </div>
                     </div>
                     <div class="mb-2">
-                        <button class="btn btn-primary col-12">Atualizar</button>
+                        <button class="btn btn-primary col-12" type="submit">Atualizar</button>
                     </div>
                 </form>
             </div>
         </div>
 
     </div>
+
+</div>
 
 </body>
 </html>

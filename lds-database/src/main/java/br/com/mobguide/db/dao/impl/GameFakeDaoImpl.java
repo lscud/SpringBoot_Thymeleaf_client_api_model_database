@@ -96,6 +96,8 @@ public class GameFakeDaoImpl implements CrudDao<Game> {
 
         if (gameToBrUpdated != null) {
             gameToBrUpdated.setName(data.getName());
+            gameToBrUpdated.setPrice(data.getPrice());
+
             return true;
         }
         return false;

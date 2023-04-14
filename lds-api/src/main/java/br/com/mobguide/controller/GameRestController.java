@@ -40,6 +40,7 @@ public class GameRestController {
 
     @DeleteMapping("/delete/{id}")
     public  ResponseEntity<Boolean> deleteGame(@PathVariable ("id") final int id){
+        service.deleteById(id);
         return ResponseEntity.ok(true);
     }
 
