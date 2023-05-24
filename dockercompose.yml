@@ -1,0 +1,22 @@
+version: "2.4"
+
+services:
+  postgres_db:
+    container_name: postgres
+    image: 'postgres:9.5'
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - '5432:5432'  #Porta do minha maquina: porta do container
+    volumes:
+      - ./temp/postgres/data:/var/lib/postgresql/data
+
+
+  adminer:
+    container_name: adminer
+    image: adminer
+    restart: always
+    ports:
+      - '6565:8080'   #porta do pc 6565
