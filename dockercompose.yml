@@ -6,6 +6,7 @@ services:
     image: 'postgres:9.5'
     restart: always
     environment:
+      SERVER: postgres_db
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     ports:
